@@ -25,6 +25,7 @@ const float height = 11.8/100;
 float time = 0, gravity = 0;
 bool endFlag = false, startFlag = true;
 led = 1;
+lcd.printf("Inicio del programa");
 ```
 Se crean las variables que se necesitan y se definen unas banderas y se apaga el led de la tarjeta que funciona como indicativo de cuando está midiento el tiempo
 
@@ -62,3 +63,6 @@ else if(endFlag && final.read() < 0.4f){
 }
 ```
 En la segunda parte del condicional, se evalua que la compuerta de fin esté habilitada para detener el temporizador y que la cantidad de luz que recibe el fotoresistor sea inferior al valor. Si estas condiciones se cumplen, se detiene el temporizador, y se hace la conversión de este tiempo de microsegundos a segundos. Una vez se hace esto, se calcula la gravedad usando la fórmula $g(x) = 2*h/t^2$, con $h$ como altura y $t$ como el tiempo. Luego de realizar este cálculo, se encarga de mostrar tanto en terminal como en un lcd este dato. Y para finalizar cambia el estado del led indicativo a apagado, se cambia el estado de las banderas para volver habilitar la compuerta de inicio y reinicia el temporizador
+
+## **Presentado por:**
+Susana Uribe y Daniel Duque
